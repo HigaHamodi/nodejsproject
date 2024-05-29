@@ -35,12 +35,13 @@ This API serves as a robust backend for business applications, facilitating seam
 - **File Logger**: Logs all HTTP 400+ errors to the `logs` folder.
 - **Block User**: Blocks a user for 24 hours after 3 failed login attempts.
 
-## API Endpoints API Documentation and Postman Integration
+### API Endpoints API Documentation and Postman Integration
 
-This project includes an api.json file that describes the available API routes. You can import this file into Postman to explore and test the API endpoints easily.
-Locate the api.json file: You can find the api.json file in the root of this repository.
-Adding api.json to Postman
+**This project includes an api.json file that describes the available API routes. You can import this file into Postman to explore and test the API endpoints easily.**
+**Locate the api.json file:** You can find the api.json file in the root of this repository.
+**Adding api.json to Postman**
 After the import is complete, you will see a new collection in your Postman sidebar.
+
 
 ### User Endpoints
 
