@@ -1,4 +1,4 @@
-# Node.js REST API for Business Content Management
+# <span style="color:blue">Node.js REST API for Business Content Management</span>
 
 ## Project Overview
 
@@ -11,7 +11,7 @@ This project implements a REST API server using Node.js, designed for a web appl
 
 This API serves as a robust backend for business applications, facilitating seamless content management and user interactions.
 
-## Key Features
+## <span style="color:green">Key Features</span>
 
 - **User Management**: User registration, login, and management.
 - **Business Card Management**: Create and manage business cards.
@@ -29,13 +29,13 @@ This API serves as a robust backend for business applications, facilitating seam
 - **Morgan**: HTTP request logging.
 - **Cors**: Cross-Origin Resource Sharing.
 
-## Bonus Features
+## <span style="color:orange">Bonus Features</span>
 
 - **Biz Number**: Users can edit their business number.
 - **File Logger**: Logs all HTTP 400+ errors to the `logs` folder.
 - **Block User**: Blocks a user for 24 hours after 3 failed login attempts.
 
-### API Endpoints API Documentation and Postman Integration
+### <span style="color:red">API Endpoints API Documentation and Postman Integration</span>
 
 **This project includes an api.json file that describes the available API routes. You can import this file into Postman to explore and test the API endpoints easily.**
 **Locate the api.json file:** You can find the api.json file in the root of this repository.
@@ -43,7 +43,7 @@ This API serves as a robust backend for business applications, facilitating seam
 After the import is complete, you will see a new collection in your Postman sidebar.
 
 
-### User Endpoints
+### <span style="color:purple">User Endpoints</span>
 
 | No. | Method | URL          | Action            | Authorization            | Return         |
 | --- | ------ | ------------ | ----------------- | ------------------------ | -------------- |
@@ -55,7 +55,7 @@ After the import is complete, you will see a new collection in your Postman side
 | 6   | PATCH  | /users/:id   | Change isBusiness | Registered user          | Updated status |
 | 7   | DELETE | /users/:id   | Delete user       | Registered user or Admin | Deleted user   |
 
-### Card Endpoints
+### <span style="color:darkblue">Card Endpoints</span>
 
 | No. | Method | URL                   | Action          | Authorization         | Return       |
 | --- | ------ | --------------------- | --------------- | --------------------- | ------------ |
@@ -76,4 +76,3 @@ To get started with this project, clone the repository and install dependencies:
 git clone https://github.com/HigaHamodi/nodejsproject.git
 cd nodejsproject
 npm install
-
