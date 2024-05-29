@@ -1,0 +1,312 @@
+Time: 22-05-2024 08:25:38
+Method: GET
+Route: /
+Status: 404
+Response: {"error":"Oops! The page you're looking for cannot be found."}
+
+Time: 22-05-2024 08:25:39
+Method: GET
+Route: /
+Status: 404
+Response: {"error":"Oops! The page you're looking for cannot be found."}
+
+Time: 22-05-2024 08:25:39
+Method: GET
+Route: /
+Status: 404
+Response: {"error":"Oops! The page you're looking for cannot be found."}
+
+Time: 22-05-2024 08:25:45
+Method: GET
+Route: /
+Status: 404
+Response: {"error":"Oops! The page you're looking for cannot be found."}
+
+Time: 22-05-2024 08:25:53
+Method: GET
+Route: /users
+Status: 401
+Response: {"message":"Missing JWT token"}
+
+Time: 22-05-2024 08:25:59
+Method: GET
+Route: /users/
+Status: 401
+Response: {"message":"Missing JWT token"}
+
+Time: 22-05-2024 09:30:37
+Method: POST
+Route: /
+Status: 404
+Response: {"error":"Oops! The page you're looking for cannot be found."}
+
+Time: 22-05-2024 09:30:45
+Method: GET
+Route: /users
+Status: 401
+Response: {"message":"Missing JWT token"}
+
+Time: 22-05-2024 09:30:50
+Method: GET
+Route: /users/:id
+Status: 401
+Response: {"message":"Missing JWT token"}
+
+Time: 22-05-2024 09:30:57
+Method: PATCH
+Route: /users/:id
+Status: 401
+Response: {"message":"Missing JWT token"}
+
+Time: 22-05-2024 09:31:02
+Method: PUT
+Route: /users/:id
+Status: 401
+Response: {"message":"Missing JWT token"}
+
+Time: 22-05-2024 10:18:20
+Method: GET
+Route: /users/664d9b2e5586dd2cf30c01ef
+Status: 401
+Response: {"message":"Missing JWT token"}
+
+Time: 22-05-2024 10:18:50
+Method: GET
+Route: /users/664d9b2e5586dd2cf30c01ef
+Status: 401
+Response: {"message":"Invalid JWT token"}
+
+Time: 22-05-2024 10:19:07
+Method: GET
+Route: /users/664d9b2e5586dd2cf30c01ef
+Status: 401
+Response: {"message":"Invalid JWT token"}
+
+Time: 22-05-2024 10:19:21
+Method: GET
+Route: /users/664d9b2e5586dd2cf30c01ef
+Status: 401
+Response: {"message":"Missing JWT token"}
+
+Time: 22-05-2024 10:20:49
+Method: GET
+Route: /users/664d9b2e5586dd2cf30c01ef
+Status: 401
+Response: {"message":"Missing JWT token"}
+
+Time: 22-05-2024 10:20:57
+Method: GET
+Route: /users/664d9b2e5586dd2cf30c01ef
+Status: 401
+Response: {"message":"Missing JWT token"}
+
+Time: 22-05-2024 10:21:09
+Method: GET
+Route: /users/664d9b2e5586dd2cf30c01ef
+Status: 401
+Response: {"message":"Missing JWT token"}
+
+Time: 22-05-2024 10:21:26
+Method: GET
+Route: /users/664d9b2e5586dd2cf30c01ef
+Status: 401
+Response: {"message":"Missing JWT token"}
+
+Time: 22-05-2024 10:21:33
+Method: GET
+Route: /users/664d9b2e5586dd2cf30c01ef
+Status: 401
+Response: {"message":"Missing JWT token"}
+
+Time: 22-05-2024 10:21:39
+Method: GET
+Route: /users/664d9b2e5586dd2cf30c01ef
+Status: 401
+Response: {"message":"Missing JWT token"}
+
+Time: 22-05-2024 10:21:56
+Method: GET
+Route: /users/664d9b2e5586dd2cf30c01ef
+Status: 401
+Response: {"message":"Missing JWT token"}
+
+Time: 22-05-2024 10:22:25
+Method: GET
+Route: /users/664d9b2e5586dd2cf30c01ef
+Status: 401
+Response: {"message":"Invalid JWT token"}
+
+Time: 22-05-2024 10:22:47
+Method: GET
+Route: /users
+Status: 401
+Response: {"message":"Missing JWT token"}
+
+Time: 22-05-2024 10:23:03
+Method: GET
+Route: /users
+Status: 401
+Response: {"message":"Missing JWT token"}
+
+Time: 22-05-2024 10:25:30
+Method: GET
+Route: /
+Status: 404
+Response: {"error":"Oops! The page you're looking for cannot be found."}
+
+Time: 22-05-2024 10:25:33
+Method: GET
+Route: /
+Status: 404
+Response: {"error":"Oops! The page you're looking for cannot be found."}
+
+Time: 22-05-2024 10:25:43
+Method: GET
+Route: /users/
+Status: 401
+Response: {"message":"Missing JWT token"}
+
+Time: 22-05-2024 10:26:08
+Method: GET
+Route: /users/664d9b2e5586dd2cf30c01ef
+Status: 401
+Response: {"message":"Missing JWT token"}
+
+Time: 22-05-2024 10:40:29
+Method: GET
+Route: /users
+Status: 401
+Response: {"message":"Invalid JWT token"}
+
+Time: 22-05-2024 10:40:43
+Method: GET
+Route: /users
+Status: 401
+Response: {"message":"Invalid JWT token"}
+
+Time: 22-05-2024 10:41:02
+Method: GET
+Route: /users/664d9b2e5586dd2cf30c01ef
+Status: 401
+Response: {"message":"Invalid JWT token"}
+
+Time: 22-05-2024 10:41:05
+Method: PUT
+Route: /users/:id
+Status: 401
+Response: {"message":"Missing JWT token"}
+
+Time: 22-05-2024 11:52:43
+Method: GET
+Route: /
+Status: 404
+Response: {"error":"Oops! The page you're looking for cannot be found."}
+
+Time: 22-05-2024 11:53:07
+Method: GET
+Route: /
+Status: 404
+Response: {"error":"Oops! The page you're looking for cannot be found."}
+
+Time: 22-05-2024 11:53:26
+Method: POST
+Route: /
+Status: 404
+Response: {"error":"Oops! The page you're looking for cannot be found."}
+
+Time: 22-05-2024 11:53:42
+Method: POST
+Route: /
+Status: 404
+Response: {"error":"Oops! The page you're looking for cannot be found."}
+
+Time: 22-05-2024 11:54:04
+Method: POST
+Route: /
+Status: 404
+Response: {"error":"Oops! The page you're looking for cannot be found."}
+
+Time: 22-05-2024 11:54:08
+Method: POST
+Route: /signup
+Status: 406
+Response: {"error":"\"name\" is required"}
+
+Time: 22-05-2024 11:54:20
+Method: POST
+Route: /signup
+Status: 406
+Response: {"error":"\"name\" must be of type object"}
+
+Time: 22-05-2024 11:55:20
+Method: POST
+Route: /signup
+Status: 406
+Response: {"error":"\"name\" must be of type object"}
+
+Time: 22-05-2024 11:56:20
+Method: POST
+Route: /signup
+Status: 406
+Response: {"error":"\"name\" must be of type object"}
+
+Time: 22-05-2024 11:57:39
+Method: POST
+Route: /signup
+Status: 406
+Response: {"error":"\"name\" is required"}
+
+Time: 22-05-2024 11:58:41
+Method: POST
+Route: /signup
+Status: 406
+Response: {"error":"\"name\" must be of type object"}
+
+Time: 22-05-2024 11:59:54
+Method: POST
+Route: /signup
+Status: 406
+Response: {"error":"\"email\" is required"}
+
+Time: 22-05-2024 12:00:35
+Method: POST
+Route: /signup
+Status: 406
+Response: {"error":"\"phone\" is required"}
+
+Time: 22-05-2024 12:00:58
+Method: POST
+Route: /signup
+Status: 406
+Response: {"error":"Please provide a valid Israeli phone number for the user's phone"}
+
+Time: 22-05-2024 12:01:07
+Method: POST
+Route: /signup
+Status: 406
+Response: {"error":"Please provide a valid Israeli phone number for the user's phone"}
+
+Time: 22-05-2024 12:01:13
+Method: POST
+Route: /signup
+Status: 406
+Response: {"error":"Password must be between 7 and 20 characters long and contain at least one digit, one uppercase letter, one lowercase letter, and one special character (!@#$%^&*)"}
+
+Time: 22-05-2024 12:01:25
+Method: POST
+Route: /signup
+Status: 406
+Response: {"error":"Password must be between 7 and 20 characters long and contain at least one digit, one uppercase letter, one lowercase letter, and one special character (!@#$%^&*)"}
+
+Time: 22-05-2024 12:02:26
+Method: GET
+Route: /users
+Status: 401
+Response: {"message":"Invalid JWT token"}
+
+Time: 22-05-2024 12:03:10
+Method: POST
+Route: /signup
+Status: 400
+Response: {"error":"Email is already registered."}
+

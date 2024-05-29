@@ -1,0 +1,12 @@
+Time: 29-05-2024 12:11:30
+Method: GET
+Route: /users
+Status: 401
+Response: {"message":"Invalid JWT token"}
+
+Time: 29-05-2024 12:12:45
+Method: GET
+Route: /users
+Status: 401
+Response: {"message":"Invalid JWT token"}
+

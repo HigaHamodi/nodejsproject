@@ -1,0 +1,99 @@
+{
+    "initialUserData": [
+      {
+        "name": { "first": "John", "middle": "Doe", "last": "Smith" },
+        "phone": "055-1234567",
+        "email": "john@example.com",
+        "password": "Password123",
+        "address": {
+          "country": "United States",
+          "city": "New York",
+          "street": "Broadway",
+          "houseNumber": "123"
+        },
+        "image": { "url": "https://example.com/john.jpg", "alt": "John's Profile Picture" }
+      },
+      {
+        "name": { "first": "Jane", "middle": "Elizabeth", "last": "Doe" },
+        "phone": "055-7654321",
+        "IsBusiness": true,
+        "email": "jane@example.com",
+        "password": "Jane@1234",
+        "address": {
+          "country": "United States",
+          "city": "Los Angeles",
+          "street": "Sunset Blvd",
+          "houseNumber": "456"
+        },
+        "image": { "url": "https://example.com/jane.jpg", "alt": "Jane's Profile Picture" }
+      },
+      {
+        "name": { "first": "Admin", "middle": "Super", "last": "User" },
+        "phone": "055-2468135",
+        "isAdmin": true,
+        "email": "admin@example.com",
+        "password": "Admin@1234",
+        "address": {
+          "country": "United States",
+          "city": "Chicago",
+          "street": "Lake Shore Drive",
+          "houseNumber": "789"
+        },
+        "image": { "url": "https://example.com/admin.jpg", "alt": "Admin's Profile Picture" }
+      }
+    ],
+    "initialCardData": [
+      {
+        "title": "Awesome Card",
+        "subtitle": "Best Awesome Card on the Market",
+        "description": "An incredible card with amazing features!",
+        "phone": "055-1111111",
+        "email": "awesome@example.com",
+        "web": "https://www.awesomecard.com",
+        "image": { "url": "https://example.com/awesome.jpg", "alt": "Awesome Card Image" },
+        "address": {
+          "state": "New York",
+          "country": "United States",
+          "city": "New York",
+          "street": "5th Avenue",
+          "houseNumber": 100,
+          "zip": "10001"
+        }
+      },
+      {
+        "title": "Fantastic Card",
+        "subtitle": "The Most Fantastic Card Ever Created",
+        "description": "Experience the magic of this fantastic card!",
+        "phone": "055-2222222",
+        "email": "fantastic@example.com",
+        "web": "https://www.fantasticcard.com",
+        "image": { "url": "https://example.com/fantastic.jpg", "alt": "Fantastic Card Image" },
+        "address": {
+          "state": "California",
+          "country": "United States",
+          "city": "Los Angeles",
+          "street": "Hollywood Blvd",
+          "houseNumber": 200,
+          "zip": "90028"
+        }
+      },
+      {
+        "title": "Incredible Card",
+        "subtitle": "Experience the Incredible with this Card",
+        "description": "Unlock the power of this incredible card!",
+        "phone": "055-3333333",
+        "email": "incredible@example.com",
+        "web": "https://www.incrediblecard.com",
+        "image": { "url": "https://example.com/incredible.jpg", "alt": "Incredible Card Image" },
+        "address": {
+          "state": "Illinois",
+          "country": "United States",
+          "city": "Chicago",
+          "street": "Michigan Ave",
+          "houseNumber": 300,
+          "zip": "60601"
+        }
+      }
+    ]
+  }
+  

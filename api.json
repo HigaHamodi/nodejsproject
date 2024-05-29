@@ -1,0 +1,419 @@
+{
+    "info": {
+      "name": "Business Content Management API",
+      "_postman_id": "unique-id",
+      "description": "API for managing business content including user and business card operations",
+      "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+    },
+    "item": [
+      {
+        "name": "User Endpoints",
+        "item": [
+          {
+            "name": "Register User",
+            "request": {
+              "method": "POST",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json",
+                  "type": "text"
+                }
+              ],
+              "body": {
+                "mode": "raw",
+                "raw": "{\n  \"username\": \"\",\n  \"password\": \"\"\n}",
+                "options": {
+                  "raw": {
+                    "language": "json"
+                  }
+                }
+              },
+              "url": {
+                "raw": "http://localhost:3000/users",
+                "protocol": "http",
+                "host": ["localhost"],
+                "port": "3000",
+                "path": ["users"]
+              }
+            },
+            "response": []
+          },
+          {
+            "name": "Login",
+            "request": {
+              "method": "POST",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json",
+                  "type": "text"
+                }
+              ],
+              "body": {
+                "mode": "raw",
+                "raw": "{\n  \"username\": \"\",\n  \"password\": \"\"\n}",
+                "options": {
+                  "raw": {
+                    "language": "json"
+                  }
+                }
+              },
+              "url": {
+                "raw": "http://localhost:3000/login",
+                "protocol": "http",
+                "host": ["localhost"],
+                "port": "3000",
+                "path": ["users", "login"]
+              }
+            },
+            "response": []
+          },
+          {
+            "name": "Get All Users",
+            "request": {
+              "method": "GET",
+              "header": [],
+              "url": {
+                "raw": "http://localhost:3000/users",
+                "protocol": "http",
+                "host": ["localhost"],
+                "port": "3000",
+                "path": ["users"]
+              }
+            },
+            "response": []
+          },
+          {
+            "name": "Get User",
+            "request": {
+              "method": "GET",
+              "header": [],
+              "url": {
+                "raw": "http://localhost:3000/users/:id",
+                "protocol": "http",
+                "host": ["localhost"],
+                "port": "3000",
+                "path": ["users", ":id"],
+                "variable": [
+                  {
+                    "key": "id",
+                    "value": ""
+                  }
+                ]
+              }
+            },
+            "response": []
+          },
+          {
+            "name": "Edit User",
+            "request": {
+              "method": "PUT",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json",
+                  "type": "text"
+                }
+              ],
+              "body": {
+                "mode": "raw",
+                "raw": "{\n  \"username\": \"\",\n  \"password\": \"\"\n}",
+                "options": {
+                  "raw": {
+                    "language": "json"
+                  }
+                }
+              },
+              "url": {
+                "raw": "http://localhost:3000/users/:id",
+                "protocol": "http",
+                "host": ["localhost"],
+                "port": "3000",
+                "path": ["users", ":id"],
+                "variable": [
+                  {
+                    "key": "id",
+                    "value": ""
+                  }
+                ]
+              }
+            },
+            "response": []
+          },
+          {
+            "name": "Change isBusiness",
+            "request": {
+              "method": "PATCH",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json",
+                  "type": "text"
+                }
+              ],
+              "body": {
+                "mode": "raw",
+                "raw": "{\n  \"isBusiness\": \"\"\n}",
+                "options": {
+                  "raw": {
+                    "language": "json"
+                  }
+                }
+              },
+              "url": {
+                "raw": "http://localhost:3000/users/:id",
+                "protocol": "http",
+                "host": ["localhost"],
+                "port": "3000",
+                "path": ["users", ":id"],
+                "variable": [
+                  {
+                    "key": "id",
+                    "value": ""
+                  }
+                ]
+              }
+            },
+            "response": []
+          },
+          {
+            "name": "Delete User",
+            "request": {
+              "method": "DELETE",
+              "header": [],
+              "url": {
+                "raw": "http://localhost:3000/users/:id",
+                "protocol": "http",
+                "host": ["localhost"],
+                "port": "3000",
+                "path": ["users", ":id"],
+                "variable": [
+                  {
+                    "key": "id",
+                    "value": ""
+                  }
+                ]
+              }
+            },
+            "response": []
+          }
+        ]
+      },
+      {
+        "name": "Card Endpoints",
+        "item": [
+          {
+            "name": "Get All Cards",
+            "request": {
+              "method": "GET",
+              "header": [],
+              "url": {
+                "raw": "http://localhost:3000/cards",
+                "protocol": "http",
+                "host": ["localhost"],
+                "port": "3000",
+                "path": ["cards"]
+              }
+            },
+            "response": []
+          },
+          {
+            "name": "Get User Cards",
+            "request": {
+              "method": "GET",
+              "header": [],
+              "url": {
+                "raw": "http://localhost:3000/cards/my-cards",
+                "protocol": "http",
+                "host": ["localhost"],
+                "port": "3000",
+                "path": ["cards", "my-cards"]
+              }
+            },
+            "response": []
+          },
+          {
+            "name": "Get Card",
+            "request": {
+              "method": "GET",
+              "header": [],
+              "url": {
+                "raw": "http://localhost:3000/cards/:id",
+                "protocol": "http",
+                "host": ["localhost"],
+                "port": "3000",
+                "path": ["cards", ":id"],
+                "variable": [
+                  {
+                    "key": "id",
+                    "value": ""
+                  }
+                ]
+              }
+            },
+            "response": []
+          },
+          {
+            "name": "Create New Card",
+            "request": {
+              "method": "POST",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json",
+                  "type": "text"
+                }
+              ],
+              "body": {
+                "mode": "raw",
+                "raw": "{\n  \"title\": \"\",\n  \"description\": \"\",\n  \"image\": \"\",\n  \"bizNumber\": \"\"\n}",
+                "options": {
+                  "raw": {
+                    "language": "json"
+                  }
+                }
+              },
+              "url": {
+                "raw": "http://localhost:3000/cards",
+                "protocol": "http",
+                "host": ["localhost"],
+                "port": "3000",
+                "path": ["cards"]
+              }
+            },
+            "response": []
+          },
+          {
+            "name": "Edit Card",
+            "request": {
+              "method": "PUT",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json",
+                  "type": "text"
+                }
+              ],
+              "body": {
+                "mode": "raw",
+                "raw": "{\n  \"title\": \"\",\n  \"description\": \"\",\n  \"image\": \"\",\n  \"bizNumber\": \"\"\n}",
+                "options": {
+                  "raw": {
+                    "language": "json"
+                  }
+                }
+              },
+              "url": {
+                "raw": "http://localhost:3000/cards/:id",
+                "protocol": "http",
+                "host": ["localhost"],
+                "port": "3000",
+                "path": ["cards", ":id"],
+                "variable": [
+                  {
+                    "key": "id",
+                    "value": ""
+                  }
+                ]
+              }
+            },
+            "response": []
+          },
+          {
+            "name": "Like Card",
+            "request": {
+              "method": "PATCH",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json",
+                  "type": "text"
+                }
+              ],
+              "body": {
+                "mode": "raw",
+                "raw": "{\n  \"like\": true\n}",
+                "options": {
+                  "raw": {
+                    "language": "json"
+                  }
+                }
+              },
+              "url": {
+                "raw": "http://localhost:3000/cards/:id",
+                "protocol": "http",
+                "host": ["localhost"],
+                "port": "3000",
+                "path": ["cards", ":id"],
+                "variable": [
+                  {
+                    "key": "id",
+                    "value": ""
+                  }
+                ]
+              }
+            },
+            "response": []
+          },
+          {
+            "name": "Delete Card",
+            "request": {
+              "method": "DELETE",
+              "header": [],
+              "url": {
+                "raw": "http://localhost:3000/cards/:id",
+                "protocol": "http",
+                "host": ["localhost"],
+                "port": "3000",
+                "path": ["cards", ":id"],
+                "variable": [
+                  {
+                    "key": "id",
+                    "value": ""
+                  }
+                ]
+              }
+            },
+            "response": []
+          },
+          {
+            "name": "Edit Biz Number",
+            "request": {
+              "method": "PATCH",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json",
+                  "type": "text"
+                }
+              ],
+              "body": {
+                "mode": "raw",
+                "raw": "{\n  \"bizNumber\": \"\"\n}",
+                "options": {
+                  "raw": {
+                    "language": "json"
+                  }
+                }
+              },
+              "url": {
+                "raw": "http://localhost:3000/cards/biz-number/:id",
+                "protocol": "http",
+                "host": ["localhost"],
+                "port": "3000",
+                "path": ["cards", "biz-number", ":id"],
+                "variable": [
+                  {
+                    "key": "id",
+                    "value": ""
+                  }
+                ]
+              }
+            },
+            "response": []
+          }
+        ]
+      }
+    ]
+  }
