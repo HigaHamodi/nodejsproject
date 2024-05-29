@@ -72,7 +72,7 @@ After the import is complete, you will see a new collection in your Postman side
 To get started with this project, clone the repository and install dependencies:
 
 ```bash
-git clone https://github.com/#
-cd your-repo
+git clone https://github.com/HigaHamodi/nodejsproject.git
+cd nodejsproject
 npm install
-```
+
