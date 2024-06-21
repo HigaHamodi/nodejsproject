@@ -2,7 +2,7 @@
     "initialUserData": [
       {
         "name": { "first": "John", "middle": "Doe", "last": "Smith" },
-        "phone": "055-1234567",
+        "phone": "0551234567",
         "email": "john@example.com",
         "password": "Aa@$1234",
         "address": {
@@ -29,7 +29,7 @@
       },
       {
         "name": { "first": "Admin", "middle": "Super", "last": "User" },
-        "phone": "055-2468135",
+        "phone": "0552468135",
         "isAdmin": true,
         "email": "admin@example.com",
         "password": "Admin@1234",
@@ -47,7 +47,7 @@
         "title": "Awesome Card",
         "subtitle": "Best Awesome Card on the Market",
         "description": "An incredible card with amazing features!",
-        "phone": "055-1111111",
+        "phone": "0551111111",
         "email": "awesome@example.com",
         "web": "https://www.awesomecard.com",
         "image": { "url": "https://example.com/awesome.jpg", "alt": "Awesome Card Image" },

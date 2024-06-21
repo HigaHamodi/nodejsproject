@@ -1,4 +1,5 @@
 const Joi = require("joi");
+
 const userValidatorSchema = Joi.object({
   name: Joi.object()
     .keys({
@@ -30,7 +31,9 @@ const userValidatorSchema = Joi.object({
       .allow(""),
     alt: Joi.string().min(2).max(50).allow(""),
   }),
+  isAdmin: Joi.boolean().optional(), // Add this line
 });
+
 exports.newUserValidator = userValidatorSchema.append({
   password: Joi.string()
     .pattern(
@@ -41,6 +44,7 @@ exports.newUserValidator = userValidatorSchema.append({
     )
     .required(),
 });
+
 exports.editUserValidator = userValidatorSchema;
 
 exports.loginUserValidator = Joi.object({
@@ -60,21 +64,16 @@ exports.loginUserValidator = Joi.object({
 
 exports.cardValidator = Joi.object({
   title: Joi.string().required().min(2).max(100),
-
   subtitle: Joi.string().required().min(2).max(100),
-
   description: Joi.string().required().min(10).max(500),
-
   phone: Joi.string()
     .pattern(/^(0[2-4,8-9][0-9]{7}|0[57,73,74,76-79]{2}[0-9]{7})$/)
     .message('user "phone" must be a valid Israeli phone number')
     .required(),
-
   web: Joi.string()
     .pattern(/(http(s?):)([/|.|\w|\s|-])*\./)
     .message('card "web" must be a valid url')
     .allow(""),
-
   image: Joi.object()
     .keys({
       url: Joi.string()
