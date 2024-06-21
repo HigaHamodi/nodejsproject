@@ -4,7 +4,7 @@
         "name": { "first": "John", "middle": "Doe", "last": "Smith" },
         "phone": "055-1234567",
         "email": "john@example.com",
-        "password": "Password123",
+        "password": "Aa@$1234",
         "address": {
           "country": "United States",
           "city": "New York",
@@ -18,7 +18,7 @@
         "phone": "055-7654321",
         "IsBusiness": true,
         "email": "jane@example.com",
-        "password": "Jane@1234",
+        "password": "Aa@$1234",
         "address": {
           "country": "United States",
           "city": "Los Angeles",

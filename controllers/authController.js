@@ -53,8 +53,7 @@ exports.login = async (req, res) => {
       });
     }
     const passwordMatch = await bcrypt.compare(password, user.password);
-    // **** Additional User Lock Feature **** //
-
+    // **** Locked User Bonus **** //
     if (!passwordMatch) {
       user.loginAttempts += 1;
       if (user.loginAttempts >= 3) {

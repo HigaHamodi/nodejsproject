@@ -1,0 +1,240 @@
+Time: 22-06-2024 00:21:20
+Method: GET
+Route: /users
+Status: 401
+Response: {"message":"User Not Authorized"}
+
+Time: 22-06-2024 00:21:35
+Method: GET
+Route: /users
+Status: 401
+Response: {"message":"User Not Authorized"}
+
+Time: 22-06-2024 00:23:12
+Method: POST
+Route: /signup
+Status: 406
+Response: {"error":"\"name\" is required"}
+
+Time: 22-06-2024 00:23:12
+Method: POST
+Route: /login
+Status: 406
+Response: {"error":"\"Password\" must be 7-20 characters long and include at least one digit, one uppercase letter, one lowercase letter, and one special character (!@#$%^&*-)."}
+
+Time: 22-06-2024 00:23:12
+Method: GET
+Route: /users
+Status: 401
+Response: {"message":"User Not Authorized"}
+
+Time: 22-06-2024 00:23:12
+Method: GET
+Route: /users/:id
+Status: 401
+Response: {"message":"User Not Authorized"}
+
+Time: 22-06-2024 00:23:12
+Method: PUT
+Route: /users/:id
+Status: 401
+Response: {"message":"User Not Authorized"}
+
+Time: 22-06-2024 00:23:12
+Method: PATCH
+Route: /users/:id
+Status: 401
+Response: {"message":"User Not Authorized"}
+
+Time: 22-06-2024 00:23:12
+Method: DELETE
+Route: /users/:id
+Status: 401
+Response: {"message":"User Not Authorized"}
+
+Time: 22-06-2024 00:23:12
+Method: GET
+Route: /cards/my-cards
+Status: 500
+Response: {"message":{}}
+
+Time: 22-06-2024 00:23:12
+Method: GET
+Route: /cards/:id
+Status: 404
+Response: {"message":"Card Not Found"}
+
+Time: 22-06-2024 00:23:12
+Method: POST
+Route: /cards
+Status: 401
+Response: {"message":"User Not Authorized"}
+
+Time: 22-06-2024 00:23:12
+Method: PUT
+Route: /cards/:id
+Status: 401
+Response: {"message":"User Not Authorized"}
+
+Time: 22-06-2024 00:23:12
+Method: PATCH
+Route: /cards/:id
+Status: 401
+Response: {"message":"User Not Authorized"}
+
+Time: 22-06-2024 00:23:13
+Method: DELETE
+Route: /cards/:id
+Status: 401
+Response: {"message":"User Not Authorized"}
+
+Time: 22-06-2024 00:23:13
+Method: PATCH
+Route: /cards/biz-number/:id
+Status: 401
+Response: undefined
+
+Time: 22-06-2024 00:23:44
+Method: POST
+Route: /signup
+Status: 406
+Response: {"error":"\"name\" is required"}
+
+Time: 22-06-2024 00:23:44
+Method: POST
+Route: /login
+Status: 406
+Response: {"error":"\"Password\" must be 7-20 characters long and include at least one digit, one uppercase letter, one lowercase letter, and one special character (!@#$%^&*-)."}
+
+Time: 22-06-2024 00:23:45
+Method: GET
+Route: /users
+Status: 401
+Response: {"message":"User Not Authorized"}
+
+Time: 22-06-2024 00:23:45
+Method: GET
+Route: /users/:id
+Status: 401
+Response: {"message":"User Not Authorized"}
+
+Time: 22-06-2024 00:23:45
+Method: PUT
+Route: /users/:id
+Status: 401
+Response: {"message":"User Not Authorized"}
+
+Time: 22-06-2024 00:23:45
+Method: PATCH
+Route: /users/:id
+Status: 401
+Response: {"message":"User Not Authorized"}
+
+Time: 22-06-2024 00:23:45
+Method: DELETE
+Route: /users/:id
+Status: 401
+Response: {"message":"User Not Authorized"}
+
+Time: 22-06-2024 00:23:45
+Method: GET
+Route: /cards/my-cards
+Status: 500
+Response: {"message":{}}
+
+Time: 22-06-2024 00:23:45
+Method: GET
+Route: /cards/:id
+Status: 404
+Response: {"message":"Card Not Found"}
+
+Time: 22-06-2024 00:23:45
+Method: POST
+Route: /cards
+Status: 401
+Response: {"message":"User Not Authorized"}
+
+Time: 22-06-2024 00:23:45
+Method: PUT
+Route: /cards/:id
+Status: 401
+Response: {"message":"User Not Authorized"}
+
+Time: 22-06-2024 00:23:45
+Method: PATCH
+Route: /cards/:id
+Status: 401
+Response: {"message":"User Not Authorized"}
+
+Time: 22-06-2024 00:23:45
+Method: DELETE
+Route: /cards/:id
+Status: 401
+Response: {"message":"User Not Authorized"}
+
+Time: 22-06-2024 00:23:45
+Method: PATCH
+Route: /cards/biz-number/:id
+Status: 401
+Response: undefined
+
+Time: 22-06-2024 00:26:51
+Method: POST
+Route: /signup
+Status: 406
+Response: {"error":"\"name\" is required"}
+
+Time: 22-06-2024 00:27:59
+Method: POST
+Route: /signup
+Status: 406
+Response: {"error":"\"name\" is required"}
+
+Time: 22-06-2024 00:28:37
+Method: POST
+Route: /signup
+Status: 406
+Response: {"error":"\"name\" is required"}
+
+Time: 22-06-2024 00:28:56
+Method: POST
+Route: /signup
+Status: 406
+Response: {"error":"\"name\" is required"}
+
+Time: 22-06-2024 00:29:23
+Method: POST
+Route: /login
+Status: 406
+Response: {"error":"\"Password\" must be 7-20 characters long and include at least one digit, one uppercase letter, one lowercase letter, and one special character (!@#$%^&*-)."}
+
+Time: 22-06-2024 00:29:41
+Method: POST
+Route: /login
+Status: 406
+Response: {"error":"\"Password\" must be 7-20 characters long and include at least one digit, one uppercase letter, one lowercase letter, and one special character (!@#$%^&*-)."}
+
+Time: 22-06-2024 00:29:49
+Method: POST
+Route: /login
+Status: 404
+Response: {"message":"Email Not Found"}
+
+Time: 22-06-2024 00:29:57
+Method: POST
+Route: /login
+Status: 404
+Response: {"message":"Email Not Found"}
+
+Time: 22-06-2024 00:30:29
+Method: POST
+Route: /login
+Status: 404
+Response: {"message":"Email Not Found"}
+
+Time: 22-06-2024 00:31:03
+Method: GET
+Route: /users
+Status: 401
+Response: {"message":"User Not Authorized"}
+
