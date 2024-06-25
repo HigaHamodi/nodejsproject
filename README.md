@@ -33,36 +33,29 @@ Locating the api.json file
 You can find the api.json file in the root of this repository.
 
 Adding api.json to Postman
+Open Postman.
+Click on the "Import" button.
+Select the api.json file from your local directory.
 After the import is complete, you will see a new collection in your Postman sidebar.
-
 User Endpoints
 No.	Method	URL	Action	Authorization	Return
 1	POST	/signup	Register user	All	User object
 2	POST	/login	Login	All	JWT
 3	GET	/users	Get all users	Admin	Users array
-4	GET	/users/
-Get user	Registered user or Admin	User object
-5	PUT	/users/
-Edit user	Registered user	Updated user
-6	PATCH	/users/
-Change isBusiness	Registered user	Updated status
-7	DELETE	/users/
-Delete user	Registered user or Admin	Deleted user
+4	GET	/users/:id	Get user	Registered user or Admin	User object
+5	PUT	/users/:id	Edit user	Registered user	Updated user
+6	PATCH	/users/:id/business	Change isBusiness	Registered user	Updated status
+7	DELETE	/users/:id	Delete user	Registered user or Admin	Deleted user
 Card Endpoints
 No.	Method	URL	Action	Authorization	Return
 1	GET	/cards	Get all cards	All	Cards array
 2	GET	/cards/my-cards	Get user cards	Registered user	User's cards
-3	GET	/cards/
-Get card	All	Card object
+3	GET	/cards/:id	Get card	All	Card object
 4	POST	/cards	Create new card	Business user	Created card
-5	PUT	/cards/
-Edit card	Card creator or Admin	Updated card
-6	PATCH	/cards/
-/like	Like card	Registered user	Updated card
-7	DELETE	/cards/
-Delete card	Card creator or Admin	Deleted card
-8	PATCH	/cards/biz-number/
-Edit biz number	Admin	Updated card
+5	PUT	/cards/:id	Edit card	Card creator or Admin	Updated card
+6	PATCH	/cards/:id/like	Like card	Registered user	Updated card
+7	DELETE	/cards/:id	Delete card	Card creator or Admin	Deleted card
+8	PATCH	/cards/:id/biz-number	Edit biz number	Admin	Updated card
 Getting Started
 To get started with this project, clone the repository and install dependencies:
 
