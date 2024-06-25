@@ -77,7 +77,7 @@ To run the application, use the following command:
 bash
 Copy code
 npm start
-This will start the server and you should see output indicating that the server is listening on the specified port.
+This will start the server, and you should see output indicating that the server is listening on the specified port.
 
 Contributing
 Contributions are welcome! Please open an issue or submit a pull request for any changes.
