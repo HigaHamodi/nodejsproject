@@ -418,3 +418,33 @@ Route: /cards/my-cards%20
 Status: 404
 Response: {"message":"Card Not Found"}
 
+Time: 22-06-2024 02:39:10
+Method: GET
+Route: /
+Status: 404
+Response: {"error":"Sorry, page not found 404"}
+
+Time: 22-06-2024 02:40:04
+Method: POST
+Route: /signup
+Status: 400
+Response: {"error":"Email is already registered."}
+
+Time: 22-06-2024 02:40:13
+Method: GET
+Route: /
+Status: 404
+Response: {"error":"Sorry, page not found 404"}
+
+Time: 22-06-2024 02:40:20
+Method: GET
+Route: /
+Status: 404
+Response: {"error":"Sorry, page not found 404"}
+
+Time: 22-06-2024 02:40:20
+Method: GET
+Route: /
+Status: 404
+Response: {"error":"Sorry, page not found 404"}
+

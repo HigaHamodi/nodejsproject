@@ -15,7 +15,6 @@ This API serves as a robust backend for business applications, facilitating seam
 
 - **User Management**: User registration, login, and management.
 - **Business Card Management**: Create and manage business cards.
-- **Content Publication**: Publish content with access control for business users.
 
 ## Technologies
 

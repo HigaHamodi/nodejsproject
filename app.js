@@ -3,24 +3,29 @@ const cors = require("cors");
 const mongoose = require("mongoose");
 const userRouter = require("./routes/userRoutes");
 const authRouter = require("./routes/authRoutes");
-const env = require("dotenv").config();
+const dotenv = require("dotenv");
 const moment = require("moment");
 const morgan = require("morgan");
 const cardRouter = require("./routes/cardRoutes");
 const createInitialData = require("./helpers/createInitialData");
 const fs = require("fs");
 const { format } = require("date-fns");
+const rateLimit = require("express-rate-limit");
+
+dotenv.config();
+
 async function mongoConnect() {
   try {
-    await mongoose.connect(env.parsed.MONGO_URL);
+    await mongoose.connect(process.env.MONGO_URL);
     console.log("MongoDB Connected");
     createInitialData();
   } catch (err) {
-    console.error("Failed to connect to MongoDB");
+    console.error("Failed to connect to MongoDB", err);
   }
 }
 
 mongoConnect().catch((err) => console.log(err));
+
 const app = express();
 morgan.token("time", () => moment().format("YYYY-MM-DD HH:mm:ss"));
 const morganFormat = ":time :method :url :status :response-time ms";
@@ -60,9 +65,19 @@ app.use((req, res, next) => {
 });
 // **** Error Logger Bonus **** //
 
-app.listen(env.parsed.PORT, async () => {
-  console.log(`Listen to port: ${env.parsed.PORT}`);
+// Rate Limiting
+const limiter = rateLimit({
+  windowMs: 15 * 60 * 1000, // 15 minutes
+  max: 100, // Limit each IP to 100 requests per `window` (here, per 15 minutes)
+  standardHeaders: true, // Return rate limit info in the `RateLimit-*` headers
+  legacyHeaders: false, // Disable the `X-RateLimit-*` headers
 });
+app.use(limiter);
+
+app.listen(process.env.PORT, async () => {
+  console.log(`Listen to port: ${process.env.PORT}`);
+});
+
 app.use(userRouter);
 app.use(authRouter);
 app.use(cardRouter);

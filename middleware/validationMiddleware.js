@@ -26,12 +26,12 @@ const userValidatorSchema = Joi.object({
   }),
   image: Joi.object({
     url: Joi.string()
-      .pattern(/(http(s?):)([/|.|\w|\s|-])*\./)
+      .pattern(/(http(s?):)([/|.|\\w|\\s|-])*\./)
       .message('The "url" must be a valid image URL')
       .allow(""),
     alt: Joi.string().min(2).max(50).allow(""),
   }),
-  isAdmin: Joi.boolean().optional(), // Add this line
+  isAdmin: Joi.boolean().optional(),
 });
 
 exports.newUserValidator = userValidatorSchema.append({
@@ -71,13 +71,13 @@ exports.cardValidator = Joi.object({
     .message('user "phone" must be a valid Israeli phone number')
     .required(),
   web: Joi.string()
-    .pattern(/(http(s?):)([/|.|\w|\s|-])*\./)
+    .pattern(/(http(s?):)([/|.|\\w|\\s|-])*\./)
     .message('card "web" must be a valid url')
     .allow(""),
   image: Joi.object()
     .keys({
       url: Joi.string()
-        .pattern(/(http(s?):)([/|.|\w|\s|-])*\./)
+        .pattern(/(http(s?):)([/|.|\\w|\\s|-])*\./)
         .message('card.image "url" must be a valid url')
         .allow(""),
       alt: Joi.string().min(2).max(256).allow(""),
