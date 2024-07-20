@@ -54,16 +54,16 @@ This API serves as a robust backend for business applications, facilitating seam
 
 ### <span style="color:darkblue">Card Endpoints</span>
 
-| No. | Method | URL                   | Action          | Authorization         | Return       |
-| --- | ------ | --------------------- | --------------- | --------------------- | ------------ |
-| 1   | GET    | /cards                | Get all cards   | All                   | Cards array  |
-| 2   | GET    | /cards/my-cards       | Get user cards  | Registered user       | User's cards |
-| 3   | GET    | /cards/:id            | Get card        | All                   | Card object  |
-| 4   | POST   | /cards                | Create new card | Business user         | Created card |
-| 5   | PUT    | /cards/:id            | Edit card       | Card creator or Admin | Updated card |
-| 6   | PATCH  | /cards/:id/like       | Like card       | Registered user       | Updated card |
-| 7   | DELETE | /cards/:id            | Delete card     | Card creator or Admin | Deleted card |
-| 8   | PATCH  | /cards/biz-number/:id | Edit biz number | Admin                 | Updated card |
+| No. | Method | URL                   | Action          | Authorization          | Return       |
+| --- | ------ | --------------------- | --------------- | ---------------------- | ------------ |
+| 1   | GET    | /cards                | Get all cards   | All                    | Cards array  |
+| 2   | GET    | /cards/my-cards       | Get user cards  | Registered user        | User's cards |
+| 3   | GET    | /cards/:id            | Get card        | All                    | Card object  |
+| 4   | POST   | /cards                | Create new card | Admin or Business user | Created card |
+| 5   | PUT    | /cards/:id            | Edit card       | Card creator or Admin  | Updated card |
+| 6   | PATCH  | /cards/:id/like       | Like card       | Registered user        | Updated card |
+| 7   | DELETE | /cards/:id            | Delete card     | Card creator or Admin  | Deleted card |
+| 8   | PATCH  | /cards/biz-number/:id | Edit biz number | Admin                  | Updated card |
 
 ## Getting Started
 
