@@ -1,13 +1,21 @@
-const env = require("dotenv").config();
+const dotenv = require("dotenv").config();
 const jwt = require("jsonwebtoken");
-exports.JWT_SECRET = env.parsed.JWT_SECRET;
+
+exports.JWT_SECRET = process.env.JWT_SECRET;
+
 exports.userJwt = (req, res) => {
-  if (!req.headers.authorization) {
+  const authHeader = req.headers.authorization;
+  if (!authHeader) {
+    res.status(401).json({ message: "User Not Authorized" });
     return null;
   }
-  const data = jwt.decode(req.headers.authorization, env.parsed.JWT_SECRET);
-  if (!data) {
-    res.status(401).send("User Not Authorized");
+
+  const token = authHeader.split(" ")[1];
+  try {
+    const data = jwt.verify(token, exports.JWT_SECRET);
+    return data;
+  } catch (err) {
+    res.status(401).json({ message: "User Not Authorized" });
+    return null;
   }
-  return data;
 };

@@ -1,33 +1,42 @@
 const bcrypt = require("bcrypt");
-const { User } = require("../models/user.js");
+const { User } = require("../models/user");
 const {
   newUserValidator,
   loginUserValidator,
-} = require("../middleware/validationMiddleware.js");
-const { JWT_SECRET } = require("../config/jwtConfig.js");
+} = require("../middleware/validationMiddleware");
+const { JWT_SECRET } = require("../config/jwtConfig");
 const jwt = require("jsonwebtoken");
 
 exports.signup = async (req, res) => {
   try {
     const userData = req.body;
-    const validate = newUserValidator.validate(userData, {
-      abortEarly: false,
-    });
+    const validate = newUserValidator.validate(userData, { abortEarly: false });
     if (validate.error) {
       const error = validate.error.details[0].message;
       return res.status(406).json({ error: error });
     }
+
+    // Check if email already exists
+    const existingUser = await User.findOne({ email: userData.email });
+    if (existingUser) {
+      console.log(`Email already registered: ${userData.email}`);
+      return res.status(400).json({ error: "Email is already registered." });
+    }
+
     const hashedPassword = await bcrypt.hash(userData.password, 10);
     userData.password = hashedPassword;
     const user = new User(userData);
     const savedUser = await user.save();
+    console.log(`User registered successfully: ${savedUser.email}`);
     res
       .status(201)
       .json({ message: "User successfully registered.", user: savedUser });
   } catch (error) {
     if (error.code === 11000) {
+      console.log(`Duplicate email error: ${req.body.email}`);
       return res.status(400).json({ error: "Email is already registered." });
     }
+    console.log(`Signup error: ${error}`);
     return res.status(500).json({ error: "Internal Server Error" });
   }
 };
@@ -53,7 +62,6 @@ exports.login = async (req, res) => {
       });
     }
     const passwordMatch = await bcrypt.compare(password, user.password);
-    // **** Locked User Bonus **** //
     if (!passwordMatch) {
       user.loginAttempts += 1;
       if (user.loginAttempts >= 3) {

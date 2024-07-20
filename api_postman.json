@@ -1,192 +1,353 @@
+
+
 {
-  "info": {
-    "name": "API Collection",
-    "_postman_id": "abcd1234-5678-90ab-cdef-1234567890ab",
-    "description": "Collection for testing user and card APIs",
-    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
-  },
-  "item": [
-    {
-      "name": "Auth Endpoints",
-      "item": [
-        {
-          "name": "Signup",
-          "request": {
-            "method": "POST",
-            "header": [
-              {
-                "key": "Content-Type",
-                "value": "application/json"
-              }
-            ],
-            "body": {
-              "mode": "raw",
-              "raw": "{\n  \"name\": { \"first\": \"Admin\", \"middle\": \"Super\", \"last\": \"User\" },\n  \"phone\": \"0552468135\",\n  \"isAdmin\": true,\n  \"email\": \"admin@example.com\",\n  \"password\": \"Admin@1234\",\n  \"address\": {\n    \"country\": \"United States\",\n    \"city\": \"Chicago\",\n    \"street\": \"Lake Shore Drive\",\n    \"houseNumber\": \"789\"\n  },\n  \"image\": { \"url\": \"https://example.com/admin.jpg\", \"alt\": \"Admin's Profile Picture\" }\n}"
-            },
-            "url": {
-              "raw": "http://localhost:3000/signup",
-              "protocol": "http",
-              "host": [
-                "localhost"
-              ],
-              "port": "3000",
-              "path": [
-                "signup"
-              ]
-            }
-          },
-          "response": []
-        },
-        {
-          "name": "Login",
-          "request": {
-            "method": "POST",
-            "header": [
-              {
-                "key": "Content-Type",
-                "value": "application/json"
-              }
-            ],
-            "body": {
-              "mode": "raw",
-              "raw": "{\n  \"email\": \"admin@example.com\",\n  \"password\": \"Admin@1234\"\n}"
-            },
-            "url": {
-              "raw": "http://localhost:3000/login",
-              "protocol": "http",
-              "host": [
-                "localhost"
-              ],
-              "port": "3000",
-              "path": [
-                "login"
-              ]
-            }
-          },
-          "response": []
-        }
-      ]
+    "info": {
+        "name": "My APIs Collection",
+        "description": "Collection of API endpoints for users, cards, and authentication",
+        "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
     },
-    {
-      "name": "Card Endpoints",
-      "item": [
+    "item": [
         {
-          "name": "Create Card",
-          "request": {
-            "method": "POST",
-            "header": [
-              {
-                "key": "Authorization",
-                "value": "Bearer {{token}}"
-              },
-              {
-                "key": "Content-Type",
-                "value": "application/json"
-              }
-            ],
-            "body": {
-              "mode": "raw",
-              "raw": "{\n  \"title\": \"Business Card Title\",\n  \"subtitle\": \"Business Card Subtitle\",\n  \"description\": \"Detailed description of the business.\",\n  \"phone\": \"0987654321\",\n  \"web\": \"https://business-website.com\",\n  \"email\": \"contact@business.com\",\n  \"image\": {\n    \"url\": \"https://example.com/business.jpg\",\n    \"alt\": \"Business Image\"\n  },\n  \"address\": {\n    \"state\": \"New York\",\n    \"country\": \"USA\",\n    \"city\": \"New York City\",\n    \"street\": \"Broadway\",\n    \"houseNumber\": 456,\n    \"zip\": 10001\n  },\n  \"bizNumber\": 987654,\n  \"likes\": [],\n  \"user_id\": \"60f6c28b5d1f4c23d8a1e10e\"\n}"
-            },
-            "url": {
-              "raw": "http://localhost:3000/cards",
-              "protocol": "http",
-              "host": [
-                "localhost"
-              ],
-              "port": "3000",
-              "path": [
-                "cards"
-              ]
-            }
-          },
-          "response": []
+            "name": "Auth",
+            "item": [
+                {
+                    "name": "Signup",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"name\":{\"first\":\"Ola\",\"middle\":\"Doe\",\"last\":\"Smith\"},\"email\":\"ola.smith@example.com\",\"phone\":\"0544484848\",\"password\":\"Sec@urePass456\",\"address\":{\"state\":\"California\",\"country\":\"USA\",\"city\":\"San Francisco\",\"street\":\"Market Street\",\"houseNumber\":456,\"zip\":94103},\"image\":{\"url\":\"https://www.example.com/ola.jpg\",\"alt\":\"Ola's Profile Picture\"},\"isAdmin\":true}"
+                        },
+                        "url": {
+                            "raw": "http://localhost:3000/signup",
+                            "protocol": "http",
+                            "host": ["localhost"],
+                            "port": "3000",
+                            "path": ["signup"]
+                        }
+                    }
+                },
+                {
+                    "name": "Login",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"email\":\"ola.smith@example.com\",\"password\":\"Sec@urePass456\"}"
+                        },
+                        "url": {
+                            "raw": "http://localhost:3000/login",
+                            "protocol": "http",
+                            "host": ["localhost"],
+                            "port": "3000",
+                            "path": ["login"]
+                        }
+                    }
+                }
+            ]
         },
         {
-          "name": "Get Card by ID",
-          "request": {
-            "method": "GET",
-            "header": [
-              {
-                "key": "Authorization",
-                "value": "Bearer {{token}}"
-              }
-            ],
-            "url": {
-              "raw": "http://localhost:3000/cards/:id",
-              "protocol": "http",
-              "host": [
-                "localhost"
-              ],
-              "port": "3000",
-              "path": [
-                "cards",
-                ":id"
-              ]
-            }
-          },
-          "response": []
+            "name": "Users",
+            "item": [
+                {
+                    "name": "Get All Users",
+                    "request": {
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer <your_jwt_token>"
+                            }
+                        ],
+                        "url": {
+                            "raw": "http://localhost:3000/users",
+                            "protocol": "http",
+                            "host": ["localhost"],
+                            "port": "3000",
+                            "path": ["users"]
+                        }
+                    }
+                },
+                {
+                    "name": "Get Single User",
+                    "request": {
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer <your_jwt_token>"
+                            }
+                        ],
+                        "url": {
+                            "raw": "http://localhost:3000/users/:id",
+                            "protocol": "http",
+                            "host": ["localhost"],
+                            "port": "3000",
+                            "path": ["users", ":id"]
+                        }
+                    }
+                },
+                {
+                    "name": "Edit User Data",
+                    "request": {
+                        "method": "PUT",
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer <your_jwt_token>"
+                            },
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"name\":{\"first\":\"Ola\",\"middle\":\"Doe\",\"last\":\"Smith\"},\"email\":\"ola.newsmith@example.com\",\"phone\":\"0544484849\",\"address\":{\"state\":\"California\",\"country\":\"USA\",\"city\":\"San Francisco\",\"street\":\"New Market Street\",\"houseNumber\":457,\"zip\":94104},\"image\":{\"url\":\"https://www.example.com/ola_new.jpg\",\"alt\":\"Ola's New Profile Picture\"}}"
+                        },
+                        "url": {
+                            "raw": "http://localhost:3000/users/:id",
+                            "protocol": "http",
+                            "host": ["localhost"],
+                            "port": "3000",
+                            "path": ["users", ":id"]
+                        }
+                    }
+                },
+                {
+                    "name": "Edit User Business",
+                    "request": {
+                        "method": "PATCH",
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer <your_jwt_token>"
+                            },
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"IsBusiness\":true}"
+                        },
+                        "url": {
+                            "raw": "http://localhost:3000/users/:id",
+                            "protocol": "http",
+                            "host": ["localhost"],
+                            "port": "3000",
+                            "path": ["users", ":id"]
+                        }
+                    }
+                },
+                {
+                    "name": "Delete User",
+                    "request": {
+                        "method": "DELETE",
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer <your_jwt_token>"
+                            }
+                        ],
+                        "url": {
+                            "raw": "http://localhost:3000/users/:id",
+                            "protocol": "http",
+                            "host": ["localhost"],
+                            "port": "3000",
+                            "path": ["users", ":id"]
+                        }
+                    }
+                }
+            ]
         },
         {
-          "name": "Update Biz Number",
-          "request": {
-            "method": "PATCH",
-            "header": [
-              {
-                "key": "Authorization",
-                "value": "Bearer {{token}}"
-              },
-              {
-                "key": "Content-Type",
-                "value": "application/json"
-              }
-            ],
-            "body": {
-              "mode": "raw",
-              "raw": "{\n  \"bizNumber\": 123456\n}"
-            },
-            "url": {
-              "raw": "http://localhost:3000/cards/biz-number/:id",
-              "protocol": "http",
-              "host": [
-                "localhost"
-              ],
-              "port": "3000",
-              "path": [
-                "cards",
-                "biz-number",
-                ":id"
-              ]
-            }
-          },
-          "response": []
-        },
-        {
-          "name": "Get User Cards",
-          "request": {
-            "method": "GET",
-            "header": [
-              {
-                "key": "Authorization",
-                "value": "Bearer {{token}}"
-              }
-            ],
-            "url": {
-              "raw": "http://localhost:3000/cards/my-cards",
-              "protocol": "http",
-              "host": [
-                "localhost"
-              ],
-              "port": "3000",
-              "path": [
-                "cards",
-                "my-cards"
-              ]
-            }
-          },
-          "response": []
+            "name": "Cards",
+            "item": [
+                {
+                    "name": "Get All Cards",
+                    "request": {
+                        "method": "GET",
+                        "url": {
+                            "raw": "http://localhost:3000/cards",
+                            "protocol": "http",
+                            "host": ["localhost"],
+                            "port": "3000",
+                            "path": ["cards"]
+                        }
+                    }
+                },
+                {
+                    "name": "Get Business User Cards",
+                    "request": {
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer <your_jwt_token>"
+                            }
+                        ],
+                        "url": {
+                            "raw": "http://localhost:3000/cards/my-cards",
+                            "protocol": "http",
+                            "host": ["localhost"],
+                            "port": "3000",
+                            "path": ["cards", "my-cards"]
+                        }
+                    }
+                },
+                {
+                    "name": "Get Single Card Data",
+                    "request": {
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer <your_jwt_token>"
+                            }
+                        ],
+                        "url": {
+                            "raw": "http://localhost:3000/cards/:id",
+                            "protocol": "http",
+                            "host": ["localhost"],
+                            "port": "3000",
+                            "path": ["cards", ":id"]
+                        }
+                    }
+                },
+                {
+                    "name": "Create Card",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer <your_jwt_token>"
+                            },
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"title\":\"New Card\",\"description\":\"Description of the card\",\"phone\":\"1234567890\",\"web\":\"https://example.com\",\"email\":\"contact@example.com\",\"image\":{\"url\":\"https://example.com/image.jpg\",\"alt\":\"Card Image\"},\"address\":{\"state\":\"State\",\"country\":\"Country\",\"city\":\"City\",\"street\":\"Street\",\"houseNumber\":123,\"zip\":\"12345\"}}"
+                        },
+                        "url": {
+                            "raw": "http://localhost:3000/cards",
+                            "protocol": "http",
+                            "host": ["localhost"],
+                            "port": "3000",
+                            "path": ["cards"]
+                        }
+                    }
+                },
+                {
+                    "name": "Edit Card Data",
+                    "request": {
+                        "method": "PUT",
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer <your_jwt_token>"
+                            },
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"title\":\"Updated Card\",\"subtitle\":\"subtitle updated\",\"description\":\"Updated description of the card\",\"phone\":\"0544781888\",\"web\":\"https://www.example.com\",\"email\":\"contact@example.com\",\"image\":{\"url\":\"https://www.example.com/image.jpg\",\"alt\":\"Card Image\"},\"address\":{\"state\":\"State\",\"country\":\"Country\",\"city\":\"City\",\"street\":\"Street\",\"houseNumber\":123,\"zip\":\"12345\"}}"
+                        },
+                        "url": {
+                            "raw": "http://localhost:3000/cards/:id",
+                            "protocol": "http",
+                            "host": ["localhost"],
+                            "port": "3000",
+                            "path": ["cards", ":id"]
+                        }
+                    }
+                },
+                {
+                    "name": "Like or Unlike Card",
+                    "request": {
+                        "method": "PATCH",
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer <your_jwt_token>"
+                            }
+                        ],
+                        "url": {
+                            "raw": "http://localhost:3000/cards/:id",
+                            "protocol": "http",
+                            "host": ["localhost"],
+                            "port": "3000",
+                            "path": ["cards", ":id"]
+                        }
+                    }
+                },
+                {
+                    "name": "Delete Card",
+                    "request": {
+                        "method": "DELETE",
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer <your_jwt_token>"
+                            }
+                        ],
+                        "url": {
+                            "raw": "http://localhost:3000/cards/:id",
+                            "protocol": "http",
+                            "host": ["localhost"],
+                            "port": "3000",
+                            "path": ["cards", ":id"]
+                        }
+                    }
+                },
+                {
+                    "name": "Update BizNumber",
+                    "request": {
+                        "method": "PATCH",
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer <your_jwt_token>"
+                            },
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"bizNumber\":123456}"
+                        },
+                        "url": {
+                            "raw": "http://localhost:3000/cards/biz-number/:id",
+                            "protocol": "http",
+                            "host": ["localhost"],
+                            "port": "3000",
+                            "path": ["cards", "biz-number", ":id"]
+                        }
+                    }
+                }
+            ]
         }
-      ]
-    }
-  ]
+    ]
 }
