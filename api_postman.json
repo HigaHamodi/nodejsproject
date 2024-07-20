@@ -1,0 +1,192 @@
+{
+  "info": {
+    "name": "API Collection",
+    "_postman_id": "abcd1234-5678-90ab-cdef-1234567890ab",
+    "description": "Collection for testing user and card APIs",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Auth Endpoints",
+      "item": [
+        {
+          "name": "Signup",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": { \"first\": \"Admin\", \"middle\": \"Super\", \"last\": \"User\" },\n  \"phone\": \"0552468135\",\n  \"isAdmin\": true,\n  \"email\": \"admin@example.com\",\n  \"password\": \"Admin@1234\",\n  \"address\": {\n    \"country\": \"United States\",\n    \"city\": \"Chicago\",\n    \"street\": \"Lake Shore Drive\",\n    \"houseNumber\": \"789\"\n  },\n  \"image\": { \"url\": \"https://example.com/admin.jpg\", \"alt\": \"Admin's Profile Picture\" }\n}"
+            },
+            "url": {
+              "raw": "http://localhost:3000/signup",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "signup"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Login",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"email\": \"admin@example.com\",\n  \"password\": \"Admin@1234\"\n}"
+            },
+            "url": {
+              "raw": "http://localhost:3000/login",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "login"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Card Endpoints",
+      "item": [
+        {
+          "name": "Create Card",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"title\": \"Business Card Title\",\n  \"subtitle\": \"Business Card Subtitle\",\n  \"description\": \"Detailed description of the business.\",\n  \"phone\": \"0987654321\",\n  \"web\": \"https://business-website.com\",\n  \"email\": \"contact@business.com\",\n  \"image\": {\n    \"url\": \"https://example.com/business.jpg\",\n    \"alt\": \"Business Image\"\n  },\n  \"address\": {\n    \"state\": \"New York\",\n    \"country\": \"USA\",\n    \"city\": \"New York City\",\n    \"street\": \"Broadway\",\n    \"houseNumber\": 456,\n    \"zip\": 10001\n  },\n  \"bizNumber\": 987654,\n  \"likes\": [],\n  \"user_id\": \"60f6c28b5d1f4c23d8a1e10e\"\n}"
+            },
+            "url": {
+              "raw": "http://localhost:3000/cards",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "cards"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get Card by ID",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              }
+            ],
+            "url": {
+              "raw": "http://localhost:3000/cards/:id",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "cards",
+                ":id"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Update Biz Number",
+          "request": {
+            "method": "PATCH",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"bizNumber\": 123456\n}"
+            },
+            "url": {
+              "raw": "http://localhost:3000/cards/biz-number/:id",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "cards",
+                "biz-number",
+                ":id"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get User Cards",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              }
+            ],
+            "url": {
+              "raw": "http://localhost:3000/cards/my-cards",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "cards",
+                "my-cards"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    }
+  ]
+}
