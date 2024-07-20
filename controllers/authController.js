@@ -19,7 +19,6 @@ exports.signup = async (req, res) => {
     }
     const hashedPassword = await bcrypt.hash(userData.password, 10);
     userData.password = hashedPassword;
-    userData.isAdmin = userData.isAdmin || false; // Ensure isAdmin is set to false if not provided
     const user = new User(userData);
     const savedUser = await user.save();
     res
@@ -54,6 +53,7 @@ exports.login = async (req, res) => {
       });
     }
     const passwordMatch = await bcrypt.compare(password, user.password);
+    // **** Locked User Bonus **** //
     if (!passwordMatch) {
       user.loginAttempts += 1;
       if (user.loginAttempts >= 3) {

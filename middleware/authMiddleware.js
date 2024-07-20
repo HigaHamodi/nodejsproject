@@ -1,24 +1,16 @@
 const jwt = require("jsonwebtoken");
-const { JWT_SECRET } = require("../config/jwtConfig");
-
+const { JWT_SECRET, userJwt } = require("../config/jwtConfig");
 exports.authUser = (req, res, next) => {
-  const token = req.headers.authorization?.split(" ")[1];
-  if (!token) {
-    return res.status(401).json({ message: "User Not Authorized" });
-  }
-
-  jwt.verify(token, JWT_SECRET, (err, decoded) => {
+  jwt.verify(req.headers.authorization, JWT_SECRET, (err, data) => {
     if (err) {
       return res.status(401).json({ message: "User Not Authorized" });
     } else {
-      req.user = decoded;
       next();
     }
   });
 };
-
 exports.sameId = (req, res, next) => {
-  const { userId } = req.user;
+  const { userId } = userJwt(req, res);
   const { id } = req.params;
   if (id != userId) {
     return res.status(401).json({
@@ -29,21 +21,21 @@ exports.sameId = (req, res, next) => {
 };
 
 exports.adminOnly = (req, res, next) => {
-  if (!req.user.isAdmin) {
+  if (!userJwt(req, res).isAdmin) {
     return res.status(401).json({ message: "Access denied. Admins only" });
   }
   next();
 };
 
 exports.businessOnly = (req, res, next) => {
-  if (!req.user.IsBusiness && !req.user.isAdmin) {
+  if (!userJwt(req, res).IsBusiness) {
     return res.status(401).json({ message: "Access denied. Business only" });
   }
   next();
 };
 
 exports.sameIdOrAdmin = (req, res, next) => {
-  const { userId, isAdmin } = req.user;
+  const { userId, isAdmin } = userJwt(req, res);
   const { id } = req.params;
   if (id != userId && !isAdmin) {
     return res.status(401).json({ message: "User Not Authorized" });

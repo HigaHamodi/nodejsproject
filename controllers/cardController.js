@@ -14,10 +14,9 @@ exports.getAllCards = async (req, res) => {
     return res.status(500).json({ error: error });
   }
 };
-
 exports.getBusinessUserCard = async (req, res) => {
   try {
-    const { userId } = req.user;
+    const { userId } = userJwt(req, res);
     const cards = await Card.find({ user_id: userId });
     res.status(200).json(cards);
   } catch (error) {
@@ -37,7 +36,7 @@ exports.getSingleCardData = async (req, res) => {
 
 exports.createCard = async (req, res) => {
   try {
-    const userId = req.user.userId;
+    const userId = userJwt(req, res).userId;
     const cardData = req.body;
     cardData.user_id = userId;
     cardData.bizNumber = await createBizNumber();
@@ -63,7 +62,7 @@ exports.createCard = async (req, res) => {
 
 exports.EditCardData = async (req, res) => {
   try {
-    const { userId } = req.user;
+    const { userId } = userJwt(req, res);
     const { id } = req.params;
     const { user_id } = req.body;
     const updateData = req.body;
@@ -95,7 +94,7 @@ exports.EditCardData = async (req, res) => {
 };
 
 exports.likeCard = async (req, res) => {
-  const { userId } = req.user;
+  const { userId } = userJwt(req, res);
   try {
     const card = await Card.findById(req.params.id);
     if (!card) {
@@ -123,7 +122,7 @@ exports.likeCard = async (req, res) => {
 
 exports.deleteCard = async (req, res) => {
   try {
-    const { userId, isAdmin } = req.user;
+    const { userId, isAdmin } = userJwt(req, res);
     const { id } = req.params;
     const card = await Card.findById(id);
     if (card.user_id != userId && !isAdmin) {

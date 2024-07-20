@@ -1,6 +1,6 @@
 const { User } = require("../models/user.js");
+const { userJwt } = require("../config/jwtConfig");
 const { editUserValidator } = require("../middleware/validationMiddleware.js");
-
 exports.getAllUsers = async (req, res) => {
   try {
     const users = await User.find({});
@@ -9,7 +9,6 @@ exports.getAllUsers = async (req, res) => {
     return res.status(500).json({ message: error });
   }
 };
-
 exports.getSingleUserData = async (req, res) => {
   try {
     const user = await User.findOne({ _id: req.params.id }).select("-password");
@@ -20,7 +19,7 @@ exports.getSingleUserData = async (req, res) => {
 };
 
 exports.EditUserData = async (req, res) => {
-  const { userId } = req.user;
+  const { userId } = userJwt(req, res);
   const { id } = req.params;
   const updateData = req.body;
   try {
@@ -38,6 +37,7 @@ exports.EditUserData = async (req, res) => {
     const updatedUser = await User.findByIdAndUpdate(userId, updateData, {
       new: true,
     });
+
     if (!updatedUser) {
       return res.status(404).json({ message: "User Not Found" });
     }
@@ -53,8 +53,10 @@ exports.EditUserData = async (req, res) => {
 };
 
 exports.EditUserBusiness = async (req, res, next) => {
-  const { userId } = req.user;
+  const { userId } = userJwt(req, res);
   const { id } = req.params;
+  console.log(userId);
+  console.log(id);
   try {
     if (id != userId) {
       return res.status(404).json({ message: "User Not Found" });
